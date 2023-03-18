@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Regression.py - MAIT 2022/23 OOP</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Regression.py";
+        var mkdocs_page_input_path = "AI_Regression\\Regression.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> MAIT 2022/23 OOP
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User Interface</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GUI/">GUI</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Data Manipulation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../outliers/">Outlier Recognition</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Interpolation/">Interpolation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../smoothing/">Smoothing Data</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">AI-Classification</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI_Classification/">Classification Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI_Classification/Classification/">Classification.py</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI_Classification/Classification_Data/">Classification_Data.py</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI_Classification/NN_Classification/">NN_Classification.py</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI_Classification/RF_Classification/">RF_Classification.py</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">AI-Regression</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Regression Overview</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Regression.py</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#regression">Regression</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#process_data">.process_data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#split_data">.split_data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#print_results">.print_results</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#plot_predictions">.plot_predictions</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Regression_Data/">Regression_Data.py</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../NN_Regression/">NN_Regression.py</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../RF_Regression/">RF_Regression.py</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ML-Classification</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../classification/">ML Classification</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">MAIT 2022/23 OOP</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>AI-Regression &raquo;</li>
+      <li>Regression.py</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1"></h1>
+<h2 id="regression">Regression</h2>
+<p><a href="https://github.com/jan-of-us/OOP_22_AI_NN\blob\main\AI_Regression/Regression.py#L9">source</a></p>
+<pre><code class="language-python">Regression(
+   data_obj: Regression_Data
+)
+</code></pre>
+<hr />
+<p>Class for all regression methods</p>
+<p><strong>Methods:</strong></p>
+<h3 id="process_data">.process_data</h3>
+<p><a href="https://github.com/jan-of-us/OOP_22_AI_NN\blob\main\AI_Regression/Regression.py#L43">source</a></p>
+<pre><code class="language-python">.process_data(
+   data_obj
+)
+</code></pre>
+<hr />
+<p>Drop non-numeric columns from the dataframe, tries to find a column with date and converts it to usable format</p>
+<p><strong>Args</strong></p>
+<ul>
+<li><strong>data_obj</strong>  : Regression_Data object</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p>modified self.data and data_obj.result_string to inform user
+of processing</p>
+<h3 id="split_data">.split_data</h3>
+<p><a href="https://github.com/jan-of-us/OOP_22_AI_NN\blob\main\AI_Regression/Regression.py#L101">source</a></p>
+<pre><code class="language-python">.split_data(
+   data_obj
+)
+</code></pre>
+<hr />
+<p>Splits given dataset into evidence and labels, requires labels to be last column of dataframe</p>
+<p><strong>Args</strong></p>
+<ul>
+<li><strong>data_obj</strong>  : Regression_Data object</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p>modified data_obj</p>
+<h3 id="print_results">.print_results</h3>
+<p><a href="https://github.com/jan-of-us/OOP_22_AI_NN\blob\main\AI_Regression/Regression.py#L131">source</a></p>
+<pre><code class="language-python">.print_results(
+   data_obj
+)
+</code></pre>
+<hr />
+<p>Adds the results to the result_string for the GUI</p>
+<p><strong>Args</strong></p>
+<ul>
+<li><strong>data_obj</strong>  : Regression_Data object</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p>modified data_obj</p>
+<h3 id="plot_predictions">.plot_predictions</h3>
+<p><a href="https://github.com/jan-of-us/OOP_22_AI_NN\blob\main\AI_Regression/Regression.py#L145">source</a></p>
+<pre><code class="language-python">.plot_predictions(
+   y_scaler, y_test, predictions, data_obj, train_test
+)
+</code></pre>
+<hr />
+<p>Plots the predicted and real values against each other. Plots as many values as the user selected</p>
+<p><strong>Args</strong></p>
+<ul>
+<li><strong>y_scaler</strong>  : MinMaxScaler used to scale y-data</li>
+<li><strong>y_test</strong>  : Real values for y</li>
+<li><strong>predictions</strong>  : Predicted values for y</li>
+<li><strong>data_obj</strong>  : Regression_Data object</li>
+<li><strong>train_test</strong>  : str "train" or "test" for plot title and correct output to data_obj</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p>modified data_obj</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../" class="btn btn-neutral float-left" title="Regression Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Regression_Data/" class="btn btn-neutral float-right" title="Regression_Data.py">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Master Automation and IT - TH Köln</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Regression_Data/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

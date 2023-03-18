@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>GUI - MAIT 2022/23 OOP</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "GUI";
+        var mkdocs_page_input_path = "GUI.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> MAIT 2022/23 OOP
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User Interface</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">GUI</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#why-streamlit">Why Streamlit ?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#structure-of-the-application">Structure of the Application :</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#gui_class">GUI_Class :</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters">Parameters :</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Data Manipulation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../outliers/">Outlier Recognition</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Interpolation/">Interpolation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../smoothing/">Smoothing Data</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">AI-Classification</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../AI_Classification/">Classification Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../AI_Classification/Classification/">Classification.py</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../AI_Classification/Classification_Data/">Classification_Data.py</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../AI_Classification/NN_Classification/">NN_Classification.py</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../AI_Classification/RF_Classification/">RF_Classification.py</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">AI-Regression</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../AI_Regression/">Regression Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../AI_Regression/Regression/">Regression.py</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../AI_Regression/Regression_Data/">Regression_Data.py</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../AI_Regression/NN_Regression/">NN_Regression.py</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../AI_Regression/RF_Regression/">RF_Regression.py</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ML-Classification</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../classification/">ML Classification</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">MAIT 2022/23 OOP</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>User Interface &raquo;</li>
+      <li>GUI</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="graphical-user-interface-using-streamlit">Graphical User Interface using Streamlit</h1>
+<p>The Data Science and Visualization Application was developed using the library <a href="https://streamlit.io/"><strong>Streamlit</strong></a>, which is completely open-source and based on python. The entirely open-source, Python-based library Streamlit was used in the creation of the Data Science and Visualization Application. This makes Streamlit very approachable and relatively simple to understand and use.</p>
+<p>The program is set up as a series of separate pages, each of which serves a distinct function. The program uses a variety of concepts, including AI, machine learning, and data processing. The project <a href="https://github.com/YuganshuWadhwa/Data-Science-and-Visualization-Application"><strong>repository</strong></a> contains more details on the application and the associated source code. </p>
+<p><br></p>
+<h3 id="why-streamlit">Why Streamlit ?</h3>
+<ul>
+<li><strong>Open source</strong> and free to use.</li>
+<li>Completely <strong>based on python</strong>, and hence no prior experience with front-end development is needed.</li>
+<li>Simple, yet <strong>strong API</strong> with vast number of supportive elements for creating <strong>interactive user interfaces</strong>.</li>
+<li>Support for <strong>Github-flavored Markdown</strong>, <strong>LaTeX</strong> expressions and <strong>HTML</strong> tags.</li>
+<li>Adding <strong>widgets</strong> (<code>st.button</code>, <code>st.checkbox</code>, etc.) to gather user inputs is as simple as declaring variables.</li>
+<li>Functionality to <strong>cache</strong> and <strong>reload</strong> data objects in the current user session.</li>
+<li>Support for <strong>various charting libraries</strong> (<code>matplotlib.pyplot</code>, <code>Bokeh</code>, <code>Altair</code>, <code>Plotly</code>, etc.).</li>
+<li><strong>Easy installation</strong>, <strong>setup</strong> and <strong>running</strong> of the developed applications.</li>
+</ul>
+<p><br></p>
+<h3 id="structure-of-the-application">Structure of the Application :</h3>
+<ul>
+<li>
+<p>Developed as a collection of multiple individual <strong>pages</strong>, which can exchange information amongst each other.</p>
+</li>
+<li>
+<p>Creation of <em>(parent)</em> <strong>classes</strong> from all groups describing the parameters required to run the developed class methods.</p>
+</li>
+<li>
+<p>Possible use of <strong>Data classes</strong> (or <strong>Child classes</strong>) for gathering relevant user inputs (datasets, parameters, etc.) and exchanging information amongst the (parent) classes.</p>
+</li>
+<li>
+<p><strong>Each page</strong> describes certain functionality within the application and <strong>works primarily with a certain group of (parent and data) classes</strong>.</p>
+</li>
+<li>
+<p>On each page, <strong>Objects</strong> of relevant classes are created and initialized with gathered user-inputs, and relevant class methods are called to generate corresponding <strong>textual</strong> or <strong>visual outputs</strong>.</p>
+</li>
+<li>
+<p>The <strong>computed results</strong> are stored back as <strong>class variables</strong>, and are then <strong>displayed on the user interface</strong>.</p>
+</li>
+<li>
+<p>Some of the results are also stored in <strong>session cache</strong> for further use in subsequent application pages.</p>
+</li>
+</ul>
+<p><img alt="Hello" src="/assets/OOP_GUI_Structure.png" title="Structure of Application" /></p>
+<p><br></p>
+<h3 id="gui_class">GUI_Class :</h3>
+<p>Primary class used to store basic information about the selected/uploaded dataset. (<a href="https://github.com/YuganshuWadhwa/Data-Science-and-Visualization-Application/blob/master/GUI/GUI_Class.py">Source Code</a>)</p>
+<h4 id="parameters">Parameters :</h4>
+<ul>
+<li><strong>arg_df</strong> : selected dataframe </li>
+<li><strong>arg_filename</strong> : corresponding file name (if present, example <em>"divorce.csv"</em>)</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../outliers/" class="btn btn-neutral float-right" title="Outlier Recognition">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Master Automation and IT - TH Köln</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../outliers/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Interpolation - MAIT 2022/23 OOP</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Interpolation";
+        var mkdocs_page_input_path = "Data Manipulation\\Interpolation.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> MAIT 2022/23 OOP
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User Interface</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GUI/">GUI</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Data Manipulation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../outliers/">Outlier Recognition</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Interpolation/">Interpolation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../smoothing/">Smoothing Data</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">AI-Classification</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI_Classification/">Classification Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI_Classification/Classification/">Classification.py</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI_Classification/Classification_Data/">Classification_Data.py</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI_Classification/NN_Classification/">NN_Classification.py</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI_Classification/RF_Classification/">RF_Classification.py</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">AI-Regression</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI_Regression/">Regression Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI_Regression/Regression/">Regression.py</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI_Regression/Regression_Data/">Regression_Data.py</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI_Regression/NN_Regression/">NN_Regression.py</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI_Regression/RF_Regression/">RF_Regression.py</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ML-Classification</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../classification/">ML Classification</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">MAIT 2022/23 OOP</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Interpolation</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="interpolation">Interpolation</h2>
+<p align="justify">
+The Interpolation class contains methods that perform different types of interpolation on time-series data. The purpose of this class is to fill missing values or gaps in the time series data, making it easier to analyze using four different techniques: forward fill, linear interpolation, cubic interpolation, and spline interpolation. The interpolated data can then be plotted alongside the original data to visualize the results.
+</p>
+
+<h3 id="class-attributes">Class Attributes</h3>
+<table>
+<thead>
+<tr>
+<th> Name  </th>
+<th> Type</th>
+<th>Description</th>
+<th>Range/values</th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>df</strong>  </td>
+<td>pandas.core.frame.DataFrame</td>
+<td>Input dataframe</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>resample_time</strong></td>
+<td>str</td>
+<td>Frequency of time series data</td>
+<td>1. A string that represents a fixed frequency offset. Some of the available string aliases include:<br>   •  'D': daily frequency<br>   •  'W': weekly frequency<br>   •  'M': month frequency<br>   •  'Q': quarter frequency<br>   •  'Y': year frequency<br>2. A string that represents a custom frequency offset. Some of the available offset strings include:<br>   •  '2H': every 2 hours<br>   •  '3T'/'3MIN': every 3 minutes<br>   •  '5S': every 5 seconds<br>   •  '1D10H': every day and 10 hours</td>
+<td>10MIN</td>
+</tr>
+<tr>
+<td><strong>date_column</strong></td>
+<td>str</td>
+<td>The name of the date column of the input data frame</td>
+<td>-</td>
+<td>date</td>
+</tr>
+<tr>
+<td><strong>order</strong></td>
+<td>int</td>
+<td>Order for the Spline Interpolation</td>
+<td>1 - 5</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="class-methods">Class Methods</h3>
+<h4 id="class-initialization">Class Initialization</h4>
+<p>This method initializes the class attributes. <strong>df</strong> is the DataFrame containing the time-series data. <strong>resample_time</strong> is the resampling frequency of the data. <strong>date_column</strong> is the name of the column containing the dates or timestamps. <strong>order</strong> is the order of the spline interpolation. The method also calls the <strong>set_index</strong> method to set the DataFrame index.</p>
+<h4 id="indexing-and-resampling">Indexing and Resampling</h4>
+<p><strong>set_index(self)</strong> method sets the DataFrame index to the <strong>date_column</strong>. </p>
+<pre><code>self.df[self.date_column] = pd.to_datetime(self.df[self.date_column])
+self.df = self.df.set_index(self.df[self.date_column])
+</code></pre>
+<p>The DataFrame is then resampled at the specified frequency in the <strong>resample_time</strong>.</p>
+<pre><code>self.df = self.df.resample(self.resample_time).mean().reset_index()
+</code></pre>
+<p>It also fills any missing values at the beginning and end of the DataFrame with the first and last valid values respectively.</p>
+<pre><code>for column in self.df.select_dtypes(include=[np.number]):
+        self.df[column].iloc[0] = self.df[column].iloc[self.df[column].first_valid_index()]
+for column in self.df.select_dtypes(include=[np.number]):
+        self.df[column].iloc[-1] = self.df[column].fillna(method='ffill', limit=len(self.df)).iloc[-1]
+</code></pre>
+<h4 id="forward-fill-method">Forward Fill Method</h4>
+<p><strong>ffill(self)</strong> method fills missing values in the DataFrame using forward fill. This is achieved by creating a copy of the original DataFrame and assigning it to self.interpolated_df. Then, the ffill method is called on this new DataFrame, which fills any missing values with the last observed value before the missing value. This means that the missing value is filled with the most recently observed value.</p>
+<pre><code>self.interpolated_df = self.df.copy()
+self.interpolated_df = self.interpolated_df.ffill()
+</code></pre>
+<p>The result of the ffill interpolation is stored in a new data frame called <strong>interpolated_df</strong>.</p>
+<h4 id="linear-interpolation">Linear Interpolation</h4>
+<p><strong>linear(self)</strong> method performs linear interpolation on any missing values in the numerical columns of the Dataframe. This is achieved by creating a copy of the original DataFrame and assigning it to <strong>self.interpolated_df</strong>. Then, the <strong>interpolate</strong> method is called on the numerical columns of this new DataFrame with the <strong>method = linear</strong> and the <strong>limit_direction</strong>  argument set to <strong>both</strong>. This method fills any missing values with a linearly interpolated value between the closest valid values in the column.</p>
+<pre><code>num_cols = self.df.select_dtypes(include=[np.number]).columns
+self.interpolated_df = self.df.copy()
+self.interpolated_df[num_cols] = self.interpolated_df[num_cols].interpolate(method='linear', limit_direction='both')
+</code></pre>
+<p>The result of the linear interpolation is stored in a new data frame called <strong>interpolated_df</strong>.</p>
+<h4 id="cubic-interpolation">Cubic Interpolation</h4>
+<p><strong>cubic(self)</strong> method performs cubic interpolation on the numerical columns of the resampled Dataframe. It calls the <strong>interpolate</strong> method with <strong>method='cubic'</strong> and the <strong>limit_direction</strong>  argument set to <strong>both</strong>.</p>
+<pre><code>num_cols = self.df.select_dtypes(include=[np.number]).columns
+self.interpolated_df = self.df.copy()
+self.interpolated_df[num_cols] = self.interpolated_df[num_cols].interpolate(method='cubic', limit_direction='both')
+</code></pre>
+<p>It then clips the values of the interpolated data. Any negative values in the <strong>interpolated_df</strong> DataFrame are replaced with 0 and any values that are greater than the maximum value of the working column before interpolation are also replaced with the maximum value using the same approach to remove outliers and keep data in range.</p>
+<pre><code>self.interpolated_df[num_cols] = self.interpolated_df[num_cols].clip(lower=0)
+for col in num_cols:
+   max_val_before = self.df[col].max()
+   self.interpolated_df[col] = self.interpolated_df[col].clip(upper=max_val_before)
+</code></pre>
+<p>The result of the cubic interpolation is stored in a new data frame called <strong>interpolated_df</strong>.</p>
+<h4 id="spline-interpolation">Spline Interpolation</h4>
+<p><strong>spline(self)</strong> method performs interpolation using the spline method on the numerical columns of the data frame. It takes the <strong>order</strong> parameter as an argument which determines the order of the spline interpolation. </p>
+<pre><code>num_cols = self.df.select_dtypes(include=[np.number]).columns
+self.interpolated_df = self.df.copy()
+self.interpolated_df[num_cols] = self.interpolated_df[num_cols].interpolate(method='spline',order= self.order, limit_direction='both')
+</code></pre>
+<p>It then clips the interpolated values to be non-negative and less than or equal to the maximum value before interpolation for each column. </p>
+<pre><code>self.interpolated_df[num_cols] = self.interpolated_df[num_cols].clip(lower=0)
+for col in num_cols:
+    max_val_before = self.df[col].max()
+        self.interpolated_df[col] = self.interpolated_df[col].clip(upper=max_val_before)
+</code></pre>
+<p>The result of the spline interpolation is stored in a new data frame called <strong>interpolated_df</strong></p>
+<h4 id="plot-results">Plot Results</h4>
+<p>The plot_results method takes in two arguments: </p>
+<table>
+<thead>
+<tr>
+<th> Name  </th>
+<th> Type</th>
+<th>Description</th>
+<th>Range/values</th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Working_Column</strong>  </td>
+<td>str</td>
+<td>The column/attribute of the input data frame which the user wants to plot</td>
+<td>List of the name of all the columns of the input data frame</td>
+<td>Appliances</td>
+</tr>
+<tr>
+<td><strong>graph_limit</strong></td>
+<td>int</td>
+<td>Number of samples of data on the x axis in line plot</td>
+<td>1 to max size of rows/data samples in DataFrame</td>
+<td>1000</td>
+</tr>
+</tbody>
+</table>
+<p>The method plots the interpolated data against the original data using matplotlib. The interpolated data is plotted as a red line, while the original data is plotted as a blue line. The number of data points to be plotted is specified by the <strong>graph_limit</strong> argument.</p>
+<pre><code>    fig1, ax1 = plt.subplots(figsize=(15, 5))
+    ax1.plot(self.interpolated_df.index[:graph_limit], self.interpolated_df[Working_Column][:graph_limit], label='Interpolated Data',color='r', alpha=0.8)
+    ax1.plot(self.df.index[:graph_limit], self.df[Working_Column][:graph_limit], label='Original Data',color='b', alpha=0.8)
+    ax1.grid()
+    ax1.legend()
+    ax1.set_xlabel('Samples')
+    ax1.set_ylabel('Value ')
+    ax1.set_title(f"Line Plot of Data Interpolation for {Working_Column}")
+    self.lineplot=fig1
+</code></pre>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Master Automation and IT - TH Köln</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

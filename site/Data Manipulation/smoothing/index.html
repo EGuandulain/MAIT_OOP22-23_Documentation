@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Smoothing Data - MAIT 2022/23 OOP</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Smoothing Data";
+        var mkdocs_page_input_path = "Data Manipulation\\smoothing.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> MAIT 2022/23 OOP
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User Interface</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GUI/">GUI</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Data Manipulation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../outliers/">Outlier Recognition</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Interpolation/">Interpolation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../smoothing/">Smoothing Data</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">AI-Classification</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI_Classification/">Classification Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI_Classification/Classification/">Classification.py</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI_Classification/Classification_Data/">Classification_Data.py</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI_Classification/NN_Classification/">NN_Classification.py</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI_Classification/RF_Classification/">RF_Classification.py</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">AI-Regression</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI_Regression/">Regression Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI_Regression/Regression/">Regression.py</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI_Regression/Regression_Data/">Regression_Data.py</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI_Regression/NN_Regression/">NN_Regression.py</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI_Regression/RF_Regression/">RF_Regression.py</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ML-Classification</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../classification/">ML Classification</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">MAIT 2022/23 OOP</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Smoothing Data</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="smoothing-data">Smoothing Data</h1>
+<p>The goal of smoothing is to remove high-frequency noise and highlight important features of the signal, such as trends, 
+patterns, and anomalies. </p>
+<p><strong>Class attributes</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Range/values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>data</strong></td>
+<td>pandas.core.frame.DataFrame</td>
+<td>-</td>
+<td>Dataframe to work with.</td>
+</tr>
+<tr>
+<td><strong>x_axis</strong></td>
+<td>String</td>
+<td>-</td>
+<td>Select the column that will work as X axis</td>
+</tr>
+<tr>
+<td><strong>y_axis</strong></td>
+<td>String</td>
+<td>-</td>
+<td>Select the column that will work as Y axis(Only for plotting)</td>
+</tr>
+<tr>
+<td><strong>x_start</strong></td>
+<td>String</td>
+<td>2 - 15</td>
+<td>Initial point of the working range of X. (Only for plotting)</td>
+</tr>
+<tr>
+<td><strong>x_end</strong></td>
+<td>String</td>
+<td>-</td>
+<td>Final point of the working range of X. (Only for plotting)</td>
+</tr>
+<tr>
+<td><strong>window_size</strong></td>
+<td>Int</td>
+<td>2 - 15</td>
+<td>Refers to the number of data points used to calculate the smoothed value for a given point.</td>
+</tr>
+<tr>
+<td><strong>grade</strong></td>
+<td>int</td>
+<td>-</td>
+<td>Refers to the order of the polynomial that is fit to the data within the window</td>
+</tr>
+<tr>
+<td><strong>alpha</strong></td>
+<td>float</td>
+<td>2 - 15</td>
+<td>Is the smoothing factor that controls the weight given to past values in the calculation of a smoothed value.</td>
+</tr>
+</tbody>
+</table>
+<p>The indexes of the start and end of the range are obtained to define the working range:</p>
+<pre><code>    self.index_min = int(self.data.index[ self.data[self.x] == self.x_start].to_list()[0])          
+    self.index_max = int(self.data.index[ self.data[self.x] == self.x_end].to_list()[0])
+</code></pre>
+<p>After that, a new array is created with indexes reset from 0 to N, the algorithms and the plots will be performed on this new array:</p>
+<pre><code>    self.new_x_axis = self.data[self.x][self.index_min: self.index_max]                                    
+    self.new_y_axis = self.data[self.y][self.index_min: self.index_max]
+
+    self.new_x_axis = self.new_x_axis.reset_index(drop = True)
+    self.new_y_axis = self.new_y_axis.reset_index(drop = True)
+    self.y_filtered = []
+    self.y_filt_complete = []
+</code></pre>
+<h3 id="moving-average-filter">Moving Average Filter</h3>
+<p>The moving average filter works by taking the average of a set of data points over a certain window size, and
+using this average as the estimate of the signal value at any given point. It is used for signal processing, finance, and engineering,
+where the goal is to remove high-frequency noise and obtain a clearer representation of the underlying signal. </p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Range/values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>self.new_y_axis</strong></td>
+<td>String</td>
+<td>-</td>
+<td>Declaration of the Y axis (Data that will be analyzed)</td>
+</tr>
+<tr>
+<td><strong>self.window_size</strong></td>
+<td>Int</td>
+<td>2 - 15</td>
+<td>Refers to the number of data points used to calculate the smoothed value for a given point.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="description-of-the-method">Description of the method</h5>
+<p>The method is defined and the array that will display the smoothed values is initialized to 0.  </p>
+<pre><code>    def mov_average_filter(self):
+
+            i = 0    
+            moving_averages = []
+</code></pre>
+<p>A loop will iterate the number of times of the lenght of the data that will be smoothed, minus the size of the window. e.g., 150 rows - 10 as window size = 145 iterations.</p>
+<pre><code>    while i &lt; len(self.new_y_axis) - self.window :
+</code></pre>
+<p>On each iteration, starting from position 0, the average of the following N numbers will be calculated and the result will be appended to the new smoothed array.   </p>
+<pre><code>        window_sum = self.new_y_axis[i : i + self.window]                             
+        window_average = round(sum(window_sum) / self.window, 2)                      
+        moving_averages.append(window_average)                                         
+        i += 1
+</code></pre>
+<p>As a time offset is generated when working with a moving average filter, due to the calculation of the current average based on future/past samples. A compensation before and after the smoothed array is implemented. </p>
+<pre><code>    for i in range (0, round(self.window/2), 1):                                        
+        moving_averages.insert(0,None)                                                 
+    for i in range (0, round(self.window/2), 1):
+        moving_averages.append(None)
+</code></pre>
+<p>The final smoothed values are returned. </p>
+<pre><code>    y_filtered = moving_averages                                                     
+    return y_filtered
+</code></pre>
+<h3 id="savitzky-golay-filter">Savitzky-Golay Filter</h3>
+<p>The Savitzky-Golay smoothing filter works by fitting a polynomial of a certain order to a set of data points and using this polynomial to estimate 
+the value of the signal at any given point.It is useful in situations where it is important to preserve features such as peaks and valleys in the data. </p>
+<h5 id="parameters_1">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Range/values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>self.new_y_axis</strong></td>
+<td>String</td>
+<td>-</td>
+<td>Declaration of the Y axis (Data that will be analyzed)</td>
+</tr>
+<tr>
+<td><strong>self.window_size</strong></td>
+<td>int</td>
+<td>2 - 15</td>
+<td>Refers to the number of data points used to calculate the smoothed value for a given point.</td>
+</tr>
+<tr>
+<td><strong>self.poly_degree</strong></td>
+<td>int</td>
+<td>1 - 5</td>
+<td>Refers to the order of the polynomial that is fit to the data within the window</td>
+</tr>
+</tbody>
+</table>
+<h5 id="description-of-the-method_1">Description of the method</h5>
+<p>The method is defined and calculated with the function 'savgol_filter' provided by the scipy.signal library.</p>
+<pre><code>def savgol_filter(self):
+
+    y_filtered = savgol_filter(self.new_y_axis, self.window, self.grade)                    
+    return y_filtered
+</code></pre>
+<h3 id="exponential-smoothing-filter">Exponential Smoothing Filter</h3>
+<p>Exponential smoothing works by weighting the past data points in a signal exponentially, with more recent data 
+points receiving higher weight than older data points. The smoothed signal value at any given point is a weighted average of the past data points, 
+with the weights decaying exponentially over time. It is particularly useful when the signal has trends or seasonality, as it can effectively capture these patterns. </p>
+<h5 id="parameters_2">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Range/values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>self.new_y_axis</strong></td>
+<td>String</td>
+<td>-</td>
+<td>Declaration of the Y axis (Data that will be analyzed)</td>
+</tr>
+<tr>
+<td><strong>self.alpha</strong></td>
+<td>float</td>
+<td>0 - 1</td>
+<td>Is the smoothing factor that controls the weight given to past values in the calculation of a smoothed value.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="description-of-the-method_2">Description of the method</h5>
+<p>The method is defined and the filtered array is initialized to 0.</p>
+<pre><code>def exponential_filter(self):
+
+    self.y_filtered = [self.new_y_axis[0]]
+</code></pre>
+<p>A loop iterates from 0 to the lenght of the original data. </p>
+<pre><code>    for i in range(1, len(self.new_y_axis)):
+</code></pre>
+<p>On each iteration, the new smoothed value is calculated from the following calculation. The result is appended to the smoothed array.</p>
+<pre><code>        smoothed_val = self.alpha * self.new_y_axis[i] + (1 - self.alpha) * self.y_filtered[i-1]
+        self.y_filtered.append(smoothed_val)
+</code></pre>
+<h3 id="create-new-dataframe">Create New DataFrame</h3>
+<p>Generate a new Dataframe with the smoothed values obtained by the method selected</p>
+<h5 id="parameters_3">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Range/values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>method_name</strong></td>
+<td>String</td>
+<td>-</td>
+<td>Provide the method selected by the user.</td>
+</tr>
+<tr>
+<td><strong>df_to_change</strong></td>
+<td>dataframe</td>
+<td>-</td>
+<td>Assign a new dataframe that will be filled with the filtered values.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="description-of-the-method_3">Description of the method</h5>
+<p>After adjusting the parameters acording with the desired output, a for loop is performed to run the filtering algorithm in every column of the dataframe. </p>
+<p>The result will be stored in the new dataframe called "df_to_change"</p>
+<pre><code>    df = self.data
+    column_to_skip = self.x
+
+    if method_name == 'method_name':
+        for column in df.columns:
+            if column != column_to_skip:
+                    #The filtering method will be performed here...
+                df_to_change[column] = filtered_column
+</code></pre>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Master Automation and IT - TH Köln</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
