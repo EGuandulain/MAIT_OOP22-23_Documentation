@@ -33,8 +33,7 @@ The program is set up as a series of separate pages, each of which serves a dist
 
 * Some of the results are also stored in **session cache** for further use in subsequent application pages.
 
-![Structure of Application](images/OOP_GUI_Structure.png)
-
+![Hello](/assets/OOP_GUI_Structure.png "Structure of Application")
 
 
 <br>

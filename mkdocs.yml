@@ -1,4 +1,4 @@
-site_name: MAIT 2022 OOP 
+site_name: MAIT 2022/23 OOP 
 # Repository
 repo_name: OOP_22_AI_NN
 repo: https://github.com/jan-of-us/OOP_22_AI_NN
@@ -26,4 +26,6 @@ nav:
         - Regression_Data.py: AI_Regression/Regression_Data.md
         - NN_Regression.py: AI_Regression/NN_Regression.md
         - RF_Regression.py: AI_Regression/RF_Regression.md
+    - ML-Classification:
+        - ML Classification: classification.md
 theme: readthedocs
