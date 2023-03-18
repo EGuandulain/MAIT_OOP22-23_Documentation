@@ -1,0 +1,29 @@
+site_name: MAIT 2022 OOP 
+# Repository
+repo_name: OOP_22_AI_NN
+repo: https://github.com/jan-of-us/OOP_22_AI_NN
+version: main
+# Copyright
+copyright: Master Automation and IT - TH Köln
+
+nav:
+    - Home: index.md
+    - User Interface: 
+        - GUI: GUI.md
+    - Data Manipulation: 
+        - Outlier Recognition: outliers.md
+        - Interpolation: Interpolation.md
+        - Smoothing Data: smoothing.md
+    - AI-Classification: 
+        - Classification Overview: AI_Classification.md
+        - Classification.py: AI_Classification/Classification.md
+        - Classification_Data.py: AI_Classification/Classification_Data.md
+        - NN_Classification.py: AI_Classification/NN_Classification.md
+        - RF_Classification.py: AI_Classification/RF_Classification.md
+    - AI-Regression: 
+        - Regression Overview: AI_Regression.md
+        - Regression.py: AI_Regression/Regression.md
+        - Regression_Data.py: AI_Regression/Regression_Data.md
+        - NN_Regression.py: AI_Regression/NN_Regression.md
+        - RF_Regression.py: AI_Regression/RF_Regression.md
+theme: readthedocs
