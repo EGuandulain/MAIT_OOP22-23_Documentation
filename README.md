@@ -40,11 +40,11 @@ An Application for Data Science and Visualization made by students of the Master
 
 * ML Based Classification and Regression :
 
-* Allows the user to perform classification on classification-type datasets
-* Allows the user to perform regression on time-series type datasets
-* Provides the user with information about each method and the corresponding parameters
-* Provides the user with necessary textual and graphical results
-* Allows the user to test the trained models by uploading test datasets
+  * Allows the user to perform classification on classification-type datasets
+  * Allows the user to perform regression on time-series type datasets
+  * Provides the user with information about each method and the corresponding parameters
+  * Provides the user with necessary textual and graphical results
+  * Allows the user to test the trained models by uploading test datasets
 
 
 Created as part of [Data Science and Visualization Application](https://github.com/YuganshuWadhwa/Data-Science-and-Visualization-Application)
