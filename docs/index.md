@@ -42,8 +42,3 @@ An Application for Data Science and Visualization made by students of the Master
 
 Created as part of [Data Science and Visualization Application](https://github.com/YuganshuWadhwa/Data-Science-and-Visualization-Application).
 
-
-### To install the needed modules:
-```
-pip install -r requirements.txt
-```
