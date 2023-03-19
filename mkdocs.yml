@@ -28,4 +28,6 @@ nav:
         - RF_Regression.py: AI_Regression/RF_Regression.md
     - ML-Classification:
         - ML Classification: classification.md
+    -ML-Regression: 
+        -ML Regression: ML_Regression.md
 theme: readthedocs
