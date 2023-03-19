@@ -1,4 +1,4 @@
-# Data Science and Visualization Application
+# Documentation for Data Science and Visualization App MAIT 2022/23
 
 An Application for Data Science and Visualization made by students of the Master of Automation and IT program 2022-23. To offer a hands-on, visual, user-friendly experience with data, the application draws on a range of fields like data manipulation, regression, classification, and artificial intelligence.
 
