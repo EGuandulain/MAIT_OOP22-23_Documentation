@@ -39,8 +39,8 @@ The program is set up as a series of separate pages, each of which serves a dist
 <br>
 
 ### GUI_Class :
-Primary class used to store basic information about the selected/uploaded dataset. ([Source Code](https://github.com/YuganshuWadhwa/Data-Science-and-Visualization-Application/blob/master/GUI/GUI_Class.py))
+Primary class used to store basic information about the selected/uploaded dataset. ([**Source Code**](https://github.com/YuganshuWadhwa/Data-Science-and-Visualization-Application/blob/master/GUI/GUI_Class.py))
 
-#### Parameters :
-* **arg_df** : selected dataframe 
-* **arg_filename** : corresponding file name (if present, example *"divorce.csv"*)
+* ***Parameters*** :
+    * **arg_df** : selected dataframe 
+    * **arg_filename** : corresponding file name (if present, example *"divorce.csv"*)
