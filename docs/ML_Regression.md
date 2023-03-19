@@ -10,6 +10,8 @@ Regression algorithms aim to build a model that can predict the target variable 
 
 Regression is widely used in various fields such as finance, economics, social sciences, and engineering to forecast trends, predict outcomes, and make informed decisions based on data analysis.
 
+[**Source Code**](https://github.com/YuganshuWadhwa/Data-Science-and-Visualization-Application/tree/master/ML_Regression)
+
 ## Applied Algorithms
 
 We applied three algorithms to it:

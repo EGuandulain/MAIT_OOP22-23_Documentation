@@ -7,6 +7,8 @@ A classification problem can be performed on structured and unstructured data to
 
 Classification in machine learning can require two or more categories of a given data set. Therefore, it generates a probability score to assign the data into a specific category, such as spam or not spam, yes or no, disease or no disease, red or green, male or female, etc. 
 
+[**Source Code**](https://github.com/YuganshuWadhwa/Data-Science-and-Visualization-Application/tree/master/ML_Classification)
+
 ## Applied Algorithms
 
 ### Support Vector Machine (SVM)
