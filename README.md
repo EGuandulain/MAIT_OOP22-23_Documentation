@@ -4,6 +4,9 @@ An Application for Data Science and Visualization made by students of the Master
 
 
 
+Created as part of [Data Science and Visualization Application](https://github.com/YuganshuWadhwa/Data-Science-and-Visualization-Application)
+
+
 ## Features of the Application
 
 * Data Selection :
@@ -46,5 +49,3 @@ An Application for Data Science and Visualization made by students of the Master
   * Provides the user with necessary textual and graphical results
   * Allows the user to test the trained models by uploading test datasets
 
-
-Created as part of [Data Science and Visualization Application](https://github.com/YuganshuWadhwa/Data-Science-and-Visualization-Application)
