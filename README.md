@@ -1,29 +1,44 @@
-# Project 2022 - AI and Neural Networks
+#Data Science and Visualization Application
 
+An Application for Data Science and Visualization made by students of the Master of Automation and IT program 2022-23. To offer a hands-on, visual, user-friendly experience with data, the application draws on a range of fields like data manipulation, regression, classification, and artificial intelligence.
 
-Created as part of [Data Science and Visualization Application](https://github.com/YuganshuWadhwa/Data-Science-and-Visualization-Application).
+##Features of the Application
 
-For example usage see [Implementation Examples](Implementation_Examples.ipynb)
+*Data Selection :
 
-Documentation can be found [here.](https://oop-22-ai-nn.readthedocs.io/en/latest/)
+Provides the user with the option to upload their own dataset or work with one of the two pre-defined datasets
+Works on Comma Seperated Value (CSV) files
+Automatic delimiter detection for the CSV files
+Data Preview :
 
-## Features
-* Classification and Regression using RandomForest or Neural Networks
-* Plotting options:
-  * Classification:
-    * Confusion matrices
-    * feature importance (random forest only)
-    * training history (neural net only)
-  * Regression
-    * Model fit (y_train vs prediction on x_train)
-    * Prediction
-    * feature importance (random forest only)
-    * training history (neural net only)
+Provides the user with a preview of the selected dataset in the form of a dataframe
+Displays statistical information for the selected dataset (along with information about the scientific background for the pre-defined datasets)
+Provides the user with additional features to remove NaN values from the dataset (if any), and reset the index
+Data Smoothing, Interpolation, and Outlier Recognition :
 
-### To install the needed modules:
-```
+Allows the user to smoothen, perform interpolation, and perform outlier recognition on the used dataset using various methods
+Allows the user to tune the parameters regarding each method and analyze the corresponding effects
+Provides the user with information about each method and the corresponding parameters
+Allows the user to download filtered datasets after outlier recognition
+AI Based Classification and Regression :
+
+Allows the user to perform classification on classification-type datasets
+Allows the user to perform regression on time-series type datasets
+Provides the user with information about each method and the corresponding parameters
+Provides the user with necessary textual and graphical results
+Allows the user to save the models after training
+Allows the user to upload pre-trained models to test the accuracy
+ML Based Classification and Regression :
+
+Allows the user to perform classification on classification-type datasets
+Allows the user to perform regression on time-series type datasets
+Provides the user with information about each method and the corresponding parameters
+Provides the user with necessary textual and graphical results
+Allows the user to test the trained models by uploading test datasets
+Created as part of Data Science and Visualization Application.
+
+To install the needed modules:
 pip install -r requirements.txt
-```
 
 
 <details>
